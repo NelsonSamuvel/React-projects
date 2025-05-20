@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Cards -->
+  <!-- Bottom card -->
+  <rect x="35" y="50" width="130" height="100" rx="5" ry="5" fill="#e6e6e6" stroke="#b3b3b3" stroke-width="2"/>
+  
+  <!-- Middle card -->
+  <rect x="40" y="45" width="130" height="100" rx="5" ry="5" fill="#f2f2f2" stroke="#b3b3b3" stroke-width="2"/>
+  
+  <!-- Top card (main card) -->
+  <rect x="45" y="40" width="130" height="100" rx="5" ry="5" fill="#ffffff" stroke="#2980b9" stroke-width="2.5"/>
+  
+  <!-- Card Content -->
+  <!-- Question mark side -->
+  <text x="95" y="80" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#2980b9">?</text>
+  
+  <!-- Dividing line -->
+  <line x1="45" y1="90" x2="175" y2="90" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4"/>
+  
+  <!-- Answer side (just a hint of text) -->
+  <rect x="60" y="105" width="100" height="8" rx="2" ry="2" fill="#d9d9d9"/>
+  <rect x="60" y="120" width="70" height="8" rx="2" ry="2" fill="#d9d9d9"/>
+  
+  <!-- Corner fold -->
+  <path d="M155,40 L175,40 L175,60 z" fill="#e6e6e6" stroke="#2980b9" stroke-width="2" stroke-linejoin="round"/>
+</svg>
