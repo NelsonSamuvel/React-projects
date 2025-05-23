@@ -14,7 +14,7 @@ function App() {
   }
 
   return (
-    <FlashCardProvider handleLoading={handleLoading}>
+    <FlashCardProvider handleLoading={handleLoading} appLoading={appLoading}>
     {appLoading && <div className="fixed inset-0 bg-slate-950 bg-opacity-50 flex items-center justify-center z-50">
       <Loader/>
     </div>}

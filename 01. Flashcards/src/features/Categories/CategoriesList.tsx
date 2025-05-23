@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 
 const CategoriesList = () => {
-  const {categories,activeCategory,handleSelectCategory} = useFlashCardContext();
+  const {categories,activeCategory,handleSelectCategory,flashCardLoading} = useFlashCardContext();
 
 
 
@@ -17,13 +17,9 @@ const CategoriesList = () => {
     <ul className="mt-4 space-y-4">
       {categories.map((category) => (
         <li
-          key={category.id}
-          className={clsx("flex justify-between px-4 py-2 border border-slate-700 rounded-md cursor-pointer hover:opacity-60 transition duration-150",
-            activeCategory?.id === category.id && "bg-slate-800"
-          )}
-          onClick={()=>handleSelectCategory(category)}
+          key={category.id}         
         >
-          <p>{category.name}</p>
+          <button className={clsx("px-4 py-2 block w-full cursor-pointer  justify-between   border border-slate-700 rounded-md  hover:opacity-60 transition duration-150", activeCategory?.id === category.id && "bg-slate-800")}  onClick={()=>handleSelectCategory(category)}>{category.name}</button>
         </li>
       ))}
     </ul>

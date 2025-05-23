@@ -1,10 +1,11 @@
 import { Dot } from "lucide-react";
+import type { Category } from "../../types/types";
 
-const CardProgress = () => {
+const CardProgress = ({activeCategory}:{activeCategory:Category | null}) => {
   return (
     <div>
       <p className="flex items-center text-xl ">
-        <span>Mathematics</span>
+        <span>{activeCategory ? activeCategory.name : ""}</span>
         <Dot className="w-8 h-8" />
         <span>
           Card <span className="">1</span> of 20

@@ -11,6 +11,7 @@ interface FlashCardContextType {
     activeCategory: Category | null;
     selectedFlashcards: FlashCard[];
     flashCardLoading: boolean;
+    appLoading: boolean;
 }
 
 const FlashCardContext = createContext<FlashCardContextType | null>(null);
@@ -19,9 +20,10 @@ const FlashCardContext = createContext<FlashCardContextType | null>(null);
 interface FlashCardProviderProps {
     children: React.ReactNode;
     handleLoading: (isLoading: boolean) => void;
+    appLoading: boolean;
 }
 
-const FlashCardProvider = ({children,handleLoading}:FlashCardProviderProps) => {
+const FlashCardProvider = ({children,handleLoading,appLoading}:FlashCardProviderProps) => {
 
     const {categories,fetchCategories} = useFlashCard();
 
@@ -40,7 +42,8 @@ const FlashCardProvider = ({children,handleLoading}:FlashCardProviderProps) => {
           handleLoading(true)
          const categories = await fetchCategories();
          if(categories?.length){
-             setActiveCategory(categories[0])   
+             setActiveCategory(categories[0])  
+             fetchFlashcardsByCategory(categories[0].id); 
          }
     
         } catch (error) {
@@ -50,13 +53,13 @@ const FlashCardProvider = ({children,handleLoading}:FlashCardProviderProps) => {
         }
       }
 
-      const fetchFlashcardsByCategory = async ()=>{
-        if(!activeCategory){
+      const fetchFlashcardsByCategory = async (categoryId:number)=>{
+        if(!categoryId){
             return;
         }
         try {
             setFlashCardLoading(true);
-            const flashcards = await getAllFlashcardsByCategory(activeCategory.id);
+            const flashcards = await getAllFlashcardsByCategory(categoryId);
             if(flashcards && Array.isArray(flashcards)){
                 setSelectedFlashcards(flashcards);
             }
@@ -71,18 +74,14 @@ const FlashCardProvider = ({children,handleLoading}:FlashCardProviderProps) => {
          loadInitialData();
       },[])
 
-      useEffect(()=>{
-        fetchFlashcardsByCategory();
-      },[activeCategory])
-
     const handleSelectCategory = async(category:Category)=>{
         setActiveCategory(category);
-       
+        fetchFlashcardsByCategory(category.id);
     }
 
     
 
-    return <FlashCardContext.Provider value={{flashcards,categories,handleSelectCategory,activeCategory,selectedFlashcards,flashCardLoading}}>{children}</FlashCardContext.Provider>
+    return <FlashCardContext.Provider value={{flashcards,categories,handleSelectCategory,activeCategory,selectedFlashcards,flashCardLoading,appLoading}}>{children}</FlashCardContext.Provider>
 }
 
 export const useFlashCardContext = ()=>{
