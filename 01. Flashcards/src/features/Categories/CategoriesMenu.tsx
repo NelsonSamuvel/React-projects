@@ -1,6 +1,10 @@
 import AddCategory from "./AddCategory";
 import CategoriesList from "./CategoriesList";
 
+export interface CategoriesMenuProps {
+  appLoading: boolean;
+}
+
 const CategoriesMenu = () => {
   return (
     <div className="border border-slate-900 w-64 px-4 py-3 mt-4 flex flex-col justify-between">
