@@ -4,6 +4,7 @@ export type Category = {
     description: string;
     color: string;
     icon: string;
+    flashcardCount: number;
 }
 
 export type FlashCard = {
@@ -17,4 +18,5 @@ export type FlashCard = {
     lastReviewed: string;
     correctCount: number;
     incorrectCount: number;
+    
 }

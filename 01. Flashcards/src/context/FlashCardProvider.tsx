@@ -12,6 +12,8 @@ interface FlashCardContextType {
     selectedFlashcards: FlashCard[];
     flashCardLoading: boolean;
     appLoading: boolean;
+    isFlipped: boolean;
+    handleFlip: () => void;
 }
 
 const FlashCardContext = createContext<FlashCardContextType | null>(null);
@@ -36,6 +38,9 @@ const FlashCardProvider = ({children,handleLoading,appLoading}:FlashCardProvider
 
     // Loader
     const [flashCardLoading,setFlashCardLoading] = useState(false);
+
+    // Flip
+    const [isFlipped,setIsFlipped] = useState(false);
 
     const loadInitialData = async ()=>{
         try {
@@ -79,9 +84,15 @@ const FlashCardProvider = ({children,handleLoading,appLoading}:FlashCardProvider
         fetchFlashcardsByCategory(category.id);
     }
 
+
+    const handleFlip = ()=>{
+        setIsFlipped(prev => !prev);
+      }
+
+
     
 
-    return <FlashCardContext.Provider value={{flashcards,categories,handleSelectCategory,activeCategory,selectedFlashcards,flashCardLoading,appLoading}}>{children}</FlashCardContext.Provider>
+    return <FlashCardContext.Provider value={{flashcards,categories,handleSelectCategory,activeCategory,selectedFlashcards,flashCardLoading,appLoading,isFlipped,handleFlip}}>{children}</FlashCardContext.Provider>
 }
 
 export const useFlashCardContext = ()=>{

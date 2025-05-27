@@ -5,42 +5,64 @@ const mockData = {
         "name": "Programming",
         "description": "Software development concepts and programming languages",
         "color": "#3B82F6",
-        "icon": "code"
+        "icon": "code",
+        "flashcardCount": 4
       },
       {
         "id": 2,
         "name": "Mathematics",
         "description": "Mathematical concepts, formulas, and problem-solving",
         "color": "#EF4444",
-        "icon": "calculator"
+        "icon": "calculator",
+        "flashcardCount": 3
       },
       {
         "id": 3,
         "name": "Science",
         "description": "Physics, chemistry, biology, and earth sciences",
         "color": "#10B981",
-        "icon": "beaker"
+        "icon": "beaker",
+        "flashcardCount": 4
       },
       {
         "id": 4,
         "name": "History",
         "description": "Historical events, dates, and important figures",
         "color": "#F59E0B",
-        "icon": "clock"
+        "icon": "clock",
+        "flashcardCount": 3
       },
       {
         "id": 5,
         "name": "Languages",
         "description": "Vocabulary, grammar, and language learning",
         "color": "#8B5CF6",
-        "icon": "globe"
+        "icon": "globe",
+        "flashcardCount": 3
       },
       {
         "id": 6,
         "name": "Geography",
         "description": "Countries, capitals, landmarks, and geographical features",
         "color": "#06B6D4",
-        "icon": "map"
+        "icon": "map",
+        "flashcardCount": 3
+      },
+      {
+        "id": 7,
+        "name": "Geography",
+        "description": "Countries, capitals, landmarks, and geographical features",
+        "color": "#06B6D4",
+        "icon": "map",
+        "flashcardCount": 3
+      },
+      {
+        "id": 8,
+        "name": "Geography",
+        "description": "Countries, capitals, landmarks, and geographical features",
+        "color": "#06B6D4",
+        "icon": "map",
+        "flashcardCount": 3
       }
     ],
     "flashcards": [

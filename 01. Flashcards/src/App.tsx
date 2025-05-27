@@ -19,7 +19,7 @@ function App() {
       <Loader/>
     </div>}
 
-    <div className="grid grid-cols-[auto_1fr]  grid-rows-[auto_1fr] max-h-[90vh] h-screen max-w-screen-xl mx-auto">
+    <div className="grid grid-cols-[auto_1fr]  grid-rows-[auto_1fr] max-h-[90vh]  h-screen max-w-screen-xl mx-auto">
       <Header />
       <CategoriesMenu/>
       <FlashCardWindow />

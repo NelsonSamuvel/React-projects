@@ -1,18 +1,27 @@
 import { Dot } from "lucide-react";
 import type { Category } from "../../types/types";
 
-const CardProgress = ({activeCategory}:{activeCategory:Category | null}) => {
+interface CardProgressProps{
+  activeCategory:Category | null,
+  flashcardCount:number,
+  currentCardIndex:number
+}
+
+const CardProgress = ({activeCategory,flashcardCount,currentCardIndex}:CardProgressProps) => {
   return (
     <div>
       <p className="flex items-center text-xl ">
         <span>{activeCategory ? activeCategory.name : ""}</span>
         <Dot className="w-8 h-8" />
         <span>
-          Card <span className="">1</span> of 20
+          Card <span className="">{currentCardIndex}</span> of {flashcardCount}
         </span>
       </p>
       <div className="w-full h-2 bg-gray-700 rounded-full mt-2">
-        <div className="w-1/3 h-full bg-amber-600 rounded-full"></div>
+        <div 
+          style={{ width: `${(100 / flashcardCount) * currentCardIndex}%` }}
+          className="h-full bg-amber-600 rounded-full transition-all duration-300 ease-in-out"
+        ></div>
       </div>
     </div>
   );
