@@ -1,3 +1,5 @@
+import type { Category } from "../types/types"
+
 const mockData = {
     "categories": [
       {
@@ -5,7 +7,7 @@ const mockData = {
         "name": "Programming",
         "description": "Software development concepts and programming languages",
         "color": "#3B82F6",
-        "icon": "code",
+    
         "flashcardCount": 4
       },
       {
@@ -13,7 +15,7 @@ const mockData = {
         "name": "Mathematics",
         "description": "Mathematical concepts, formulas, and problem-solving",
         "color": "#EF4444",
-        "icon": "calculator",
+     
         "flashcardCount": 3
       },
       {
@@ -21,7 +23,7 @@ const mockData = {
         "name": "Science",
         "description": "Physics, chemistry, biology, and earth sciences",
         "color": "#10B981",
-        "icon": "beaker",
+        
         "flashcardCount": 4
       },
       {
@@ -29,7 +31,7 @@ const mockData = {
         "name": "History",
         "description": "Historical events, dates, and important figures",
         "color": "#F59E0B",
-        "icon": "clock",
+      
         "flashcardCount": 3
       },
       {
@@ -37,7 +39,7 @@ const mockData = {
         "name": "Languages",
         "description": "Vocabulary, grammar, and language learning",
         "color": "#8B5CF6",
-        "icon": "globe",
+      
         "flashcardCount": 3
       },
       {
@@ -45,23 +47,7 @@ const mockData = {
         "name": "Geography",
         "description": "Countries, capitals, landmarks, and geographical features",
         "color": "#06B6D4",
-        "icon": "map",
-        "flashcardCount": 3
-      },
-      {
-        "id": 7,
-        "name": "Geography",
-        "description": "Countries, capitals, landmarks, and geographical features",
-        "color": "#06B6D4",
-        "icon": "map",
-        "flashcardCount": 3
-      },
-      {
-        "id": 8,
-        "name": "Geography",
-        "description": "Countries, capitals, landmarks, and geographical features",
-        "color": "#06B6D4",
-        "icon": "map",
+  
         "flashcardCount": 3
       }
     ],
@@ -346,6 +332,16 @@ const mockData = {
         setTimeout(()=>{
             const flashcards = mockData.flashcards.filter(flashcard => flashcard.categoryId === categoryId);
             resolve(flashcards)
+        },1000)
+    })
+  }
+
+
+  export const addNewCategory = (category:Category):Promise<Category>=>{
+    return new Promise(resolve => {
+        setTimeout(()=>{
+            mockData.categories.push(category)
+            resolve(category)
         },1000)
     })
   }

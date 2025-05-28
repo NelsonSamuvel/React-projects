@@ -5,6 +5,7 @@ import { useFlashCardContext } from "../../context/FlashCardProvider";
 import FlashCardSkeleton from "./FlashCardSkeleton";
 import { useCallback, useEffect, useState } from "react";
 import type { FlashCard } from "../../types/types";
+import AddQuestion from "./AddQuestion";
 
 const FlashCardWindow = () => {
 
@@ -88,7 +89,7 @@ const FlashCardWindow = () => {
         <SingleCard card={currentFlashcard} isFlipped={isFlipped} color  = {activeCategory?.color || ""}/>
         <CardActions handlePrevBtn={handlePrevBtn} handleNextBtn={handleNextBtn} handleFlip={handleFlip} isFlipped={isFlipped}/>
       </div>
-      </> : null
+      </> : <AddQuestion/>
       }
     </div>
     </>

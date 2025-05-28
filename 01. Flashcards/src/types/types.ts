@@ -3,7 +3,6 @@ export type Category = {
     name: string;
     description: string;
     color: string;
-    icon: string;
     flashcardCount: number;
 }
 

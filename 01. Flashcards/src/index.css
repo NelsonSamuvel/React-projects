@@ -14,4 +14,15 @@
   .scrollbar-custom::-webkit-scrollbar-thumb:hover {
     @apply opacity-50;
   }
+
+
+  input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #0f172a inset; /* matches bg-slate-900 */
+    -webkit-text-fill-color: #f8fafc;         /* matches text-slate-100 */
+    caret-color: #f8fafc;                     /* match the text color for dark bg */
+    transition: background-color 9999s ease-in-out 0s;
+  }
   
+  
+
+
